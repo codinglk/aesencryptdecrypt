@@ -18,9 +18,13 @@ Although it was relatively easy to find the exact cipher mode (which is AES/ECB/
 MYSQL Commands for AES-128-CBC:
 
 mysql> SET block_encryption_mode = 'aes-256-cbc';
+
 mysql> SET @key_str = 'Same-Key-Mentioned-In-File';
+
 mysql> SET @init_vector = 'Same-Vector-Value-Mentioned-In-File'
+
 mysql> SELECT AES_DECRYPT(unhex('ENCRYPTED-STRING'),@key_str, @init_vector)
+
 mysql> SELECT hex(AES_ENCRYPT('VALUE-TO-BE-ENCRYPTED',@key_str, @init_vector))
 
 MYSQL Commands for AES-128-ECB: Use the above commands and you do not need to use the init vector for ECB.
